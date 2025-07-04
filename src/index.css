@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 145 70% 35%; /* Updated Green */
+    --primary: 173 71% 12%; /* Updated Green */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -33,15 +33,15 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 145 70% 35%;
+    --ring: 173 71% 12%;
 
     --radius: 0.5rem;
 
     /* Custom Makancom Colors */
-    --makancom-green: 145 70% 35%;
+    --makancom-green: 173 71% 12%;
     --makancom-gold: 45 100% 51%;
     --makancom-silver: 210 14% 83%;
-    --makancom-dark-green: 145 70% 25%;
+    --makancom-dark-green: 173 71% 2%;
   }
 
   .dark {
@@ -54,7 +54,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 145 70% 30%;
+    --primary: 173 71% 7%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -71,12 +71,12 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 145 70% 30%;
+    --ring: 173 71% 7%;
 
-    --makancom-green: 145 70% 30%;
+    --makancom-green: 173 71% 7%;
     --makancom-gold: 45 100% 51%;
     --makancom-silver: 210 14% 60%;
-    --makancom-dark-green: 145 70% 25%;
+    --makancom-dark-green: 173 71% 2%;
   }
 }
 
