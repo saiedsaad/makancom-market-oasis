@@ -22,12 +22,56 @@ import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import HeroSection from "@/components/HeroSection";
+import SearchFilters from "@/components/SearchFilters";
 
 const Index = () => {
+  const [activeFilters, setActiveFilters] = useState<string[]>([]);
+
+  const handleSearch = (query: string) => {
+    console.log("Searching for:", query);
+    // TODO: Implement search functionality
+  };
+
+  const handleCategoryFilter = (category: string) => {
+    if (category !== "All Categories") {
+      setActiveFilters(prev => [...prev.filter(f => !f.startsWith("Category:")), `Category: ${category}`]);
+    }
+  };
+
+  const handleLocationFilter = (location: string) => {
+    if (location !== "All Locations") {
+      setActiveFilters(prev => [...prev.filter(f => !f.startsWith("Location:")), `Location: ${location}`]);
+    }
+  };
+
+  const handlePriceFilter = (minPrice: string, maxPrice: string) => {
+    const priceFilter = `Price: ${minPrice || '0'} - ${maxPrice || '∞'} AED`;
+    setActiveFilters(prev => [...prev.filter(f => !f.startsWith("Price:")), priceFilter]);
+  };
+
+  const clearFilters = () => {
+    setActiveFilters([]);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <HeroSection />
+      
+      {/* Search Section */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <SearchFilters
+            onSearch={handleSearch}
+            onCategoryFilter={handleCategoryFilter}
+            onLocationFilter={handleLocationFilter}
+            onPriceFilter={handlePriceFilter}
+            activeFilters={activeFilters}
+            onClearFilters={clearFilters}
+          />
+        </div>
+      </section>
+
       <CategoryGrid />
       <FeaturedProducts />
       

@@ -1,8 +1,10 @@
 
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, Share2, Eye } from "lucide-react";
+import ProductModal from "./ProductModal";
 
 const featuredProducts = [
   {
@@ -52,6 +54,17 @@ const featuredProducts = [
 ];
 
 const FeaturedProducts = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [favorites, setFavorites] = useState<number[]>([]);
+
+  const toggleFavorite = (productId: number) => {
+    setFavorites(prev => 
+      prev.includes(productId) 
+        ? prev.filter(id => id !== productId)
+        : [...prev, productId]
+    );
+  };
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -67,14 +80,24 @@ const FeaturedProducts = () => {
                 <img 
                   src={product.image} 
                   alt={product.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                  onClick={() => setSelectedProduct(product)}
                 />
                 <Badge className="absolute top-3 left-3 bg-accent text-black">
                   {product.category}
                 </Badge>
                 <div className="absolute top-3 right-3 flex gap-2">
-                  <Button size="icon" variant="ghost" className="bg-white/90 hover:bg-white">
-                    <Heart className="w-4 h-4" />
+                  <Button 
+                    size="icon" 
+                    variant="ghost" 
+                    className="bg-white/90 hover:bg-white"
+                    onClick={() => toggleFavorite(product.id)}
+                  >
+                    <Heart 
+                      className="w-4 h-4" 
+                      fill={favorites.includes(product.id) ? "red" : "none"}
+                      color={favorites.includes(product.id) ? "red" : "currentColor"}
+                    />
                   </Button>
                   <Button size="icon" variant="ghost" className="bg-white/90 hover:bg-white">
                     <Share2 className="w-4 h-4" />
@@ -88,7 +111,10 @@ const FeaturedProducts = () => {
               </div>
               
               <CardContent className="p-4">
-                <h3 className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                <h3 
+                  className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors cursor-pointer"
+                  onClick={() => setSelectedProduct(product)}
+                >
                   {product.title}
                 </h3>
                 <p className="text-2xl font-bold text-primary mb-2">{product.price}</p>
@@ -105,7 +131,10 @@ const FeaturedProducts = () => {
                   </div>
                 </div>
                 
-                <Button className="w-full mt-4 bg-primary hover:bg-primary/90">
+                <Button 
+                  className="w-full mt-4 bg-primary hover:bg-primary/90"
+                  onClick={() => setSelectedProduct(product)}
+                >
                   View Details
                 </Button>
               </CardContent>
@@ -118,6 +147,12 @@ const FeaturedProducts = () => {
             View All Listings
           </Button>
         </div>
+
+        <ProductModal 
+          product={selectedProduct}
+          isOpen={!!selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
       </div>
     </section>
   );
