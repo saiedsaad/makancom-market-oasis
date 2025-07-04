@@ -1,0 +1,101 @@
+{
+  "language": {
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "header": {
+    "welcome": "مرحبًا بكم في مكان كوم",
+    "searchPlaceholder": "ابحث عن أي شيء...",
+    "search": "بحث",
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب"
+  },
+  "hero": {
+    "titleMain": "اكتشف كل ما",
+    "titleAccent": "تحتاجه",
+    "subtitle": "سوقك الموثوق الذي يربط المشترين والبائعين عبر جميع الفئات",
+    "startShopping": "ابدأ التسوق",
+    "sellItem": "اعرض منتجك",
+    "stats": {
+      "activeListings": "إعلانات نشطة",
+      "happyUsers": "مستخدمون سعداء",
+      "categories": "فئات"
+    }
+  },
+  "categories": {
+    "popular": "الفئات الشائعة",
+    "popularSubtitle": "اكتشف ما هو رائج في سوقنا",
+    "all": "جميع الفئات",
+    "allSubtitle": "تصفح مجموعتنا الكاملة",
+    "list": {
+      "cars": "سيارات",
+      "realEstate": "عقارات",
+      "phones": "هواتف",
+      "furniture": "أثاث",
+      "motorcycles": "دراجات نارية",
+      "carRentals": "تأجير سيارات",
+      "marineEquipment": "معدات بحرية",
+      "spareParts": "قطع غيار",
+      "heavyEquipment": "معدات ثقيلة",
+      "events": "الفعاليات والمناسبات",
+      "gardening": "الزراعة والبستنة",
+      "business": "خدمات الأعمال",
+      "menSupplies": "مستلزمات رجالية",
+      "womenSupplies": "مستلزمات نسائية",
+      "kidsSupplies": "مستلزمات الأطفال",
+      "flowers": "الزهور والهدايا",
+      "jobs": "وظائف شاغرة",
+      "electronics": "إلكترونيات",
+      "homeAppliances": "أجهزة منزلية",
+      "cameras": "كاميرات وفيديو"
+    },
+    "items": "عنصر"
+  },
+  "featured": {
+    "title": "إعلانات مميزة",
+    "subtitle": "منتجات مختارة بعناية لك",
+    "featuredBadge": "مميز",
+    "viewDetails": "عرض التفاصيل",
+    "viewAll": "عرض كل الإعلانات"
+  },
+  "search": {
+    "filters": "فلاتر",
+    "activeFilters": "الفلاتر النشطة:",
+    "clearAll": "مسح الكل",
+    "category": "الفئة",
+    "location": "الموقع",
+    "selectCategory": "اختر الفئة",
+    "selectLocation": "اختر الموقع",
+    "minPrice": "أقل سعر (درهم)",
+    "maxPrice": "أعلى سعر (درهم)"
+  },
+  "product": {
+    "views": "مشاهدة",
+    "likes": "إعجاب",
+    "posted": "تم النشر قبل يومين",
+    "description": "الوصف",
+    "sellerInfo": "معلومات البائع",
+    "callSeller": "اتصل بالبائع",
+    "message": "رسالة",
+    "memberSince": "عضو منذ 2020"
+  },
+  "footer": {
+    "categories": "الفئات",
+    "support": "الدعم",
+    "connect": "تواصل",
+    "helpCenter": "مركز المساعدة",
+    "contactUs": "اتصل بنا",
+    "terms": "شروط الخدمة",
+    "privacy": "سياسة الخصوصية",
+    "aboutUs": "معلومات عنا",
+    "blog": "المدونة",
+    "careers": "الوظائف",
+    "press": "الصحافة",
+    "rights": "جميع الحقوق محفوظة.",
+    "trust": "سوقك الموثوق لكل ما تحتاجه"
+  },
+  "notFound": {
+    "oops": "عذراً! الصفحة غير موجودة",
+    "returnHome": "العودة إلى الصفحة الرئيسية"
+  }
+}

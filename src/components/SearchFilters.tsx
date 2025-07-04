@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -28,14 +29,26 @@ const SearchFilters = ({
   const [showFilters, setShowFilters] = useState(false);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const { t } = useTranslation();
 
   const categories = [
-    "All Categories", "Cars", "Real Estate", "Phones", "Furniture", 
-    "Motorcycles", "Electronics", "Home Appliances"
+    'all',
+    'cars',
+    'realEstate',
+    'phones',
+    'furniture',
+    'motorcycles',
+    'electronics',
+    'homeAppliances'
   ];
 
   const locations = [
-    "All Locations", "Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah"
+    'All Locations',
+    'Dubai',
+    'Abu Dhabi',
+    'Sharjah',
+    'Ajman',
+    'Ras Al Khaimah'
   ];
 
   const handleSearch = () => {
@@ -53,18 +66,18 @@ const SearchFilters = ({
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
           <Input
-            placeholder="Search for anything..."
+            placeholder={t('header.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             className="pl-10 pr-4 py-3 text-lg rounded-full border-2 border-primary/20 focus:border-primary"
           />
         </div>
-        <Button 
+        <Button
           onClick={handleSearch}
           className="rounded-full px-8 bg-primary hover:bg-primary/90"
         >
-          Search
+          {t('header.search')}
         </Button>
         <Button 
           variant="outline" 
@@ -72,14 +85,14 @@ const SearchFilters = ({
           className="rounded-full px-6"
         >
           <Filter className="w-4 h-4 mr-2" />
-          Filters
+          {t('search.filters')}
         </Button>
       </div>
 
       {/* Active Filters */}
       {activeFilters.length > 0 && (
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm text-muted-foreground">Active filters:</span>
+          <span className="text-sm text-muted-foreground">{t('search.activeFilters')}</span>
           {activeFilters.map((filter, index) => (
             <Badge key={index} variant="secondary" className="flex items-center gap-1">
               {filter}
@@ -87,7 +100,7 @@ const SearchFilters = ({
             </Badge>
           ))}
           <Button variant="ghost" size="sm" onClick={onClearFilters}>
-            Clear All
+            {t('search.clearAll')}
           </Button>
         </div>
       )}
@@ -98,15 +111,15 @@ const SearchFilters = ({
           <CardContent className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div>
-                <label className="text-sm font-medium mb-2 block">Category</label>
+                <label className="text-sm font-medium mb-2 block">{t('search.category')}</label>
                 <Select onValueChange={onCategoryFilter}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select category" />
+                    <SelectValue placeholder={t('search.selectCategory')} />
                   </SelectTrigger>
                   <SelectContent>
                     {categories.map((category) => (
                       <SelectItem key={category} value={category}>
-                        {category}
+                        {category === 'all' ? t('categories.all') : t(`categories.list.${category}`)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -114,10 +127,10 @@ const SearchFilters = ({
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Location</label>
+                <label className="text-sm font-medium mb-2 block">{t('search.location')}</label>
                 <Select onValueChange={onLocationFilter}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select location" />
+                    <SelectValue placeholder={t('search.selectLocation')} />
                   </SelectTrigger>
                   <SelectContent>
                     {locations.map((location) => (
@@ -133,7 +146,7 @@ const SearchFilters = ({
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Min Price (AED)</label>
+                <label className="text-sm font-medium mb-2 block">{t('search.minPrice')}</label>
                 <Input
                   type="number"
                   placeholder="0"
@@ -143,7 +156,7 @@ const SearchFilters = ({
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Max Price (AED)</label>
+                <label className="text-sm font-medium mb-2 block">{t('search.maxPrice')}</label>
                 <div className="flex gap-2">
                   <Input
                     type="number"

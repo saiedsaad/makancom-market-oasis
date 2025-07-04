@@ -1,5 +1,6 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -20,8 +21,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [isDark, setIsDark] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(i18n.language || 'en');
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
@@ -38,7 +46,7 @@ const Header = () => {
         {/* Top Bar */}
         <div className="flex items-center justify-between py-2 text-sm border-b border-border/50">
           <div className="flex items-center gap-4">
-            <span className="text-muted-foreground">Welcome to Makancom</span>
+            <span className="text-muted-foreground">{t('header.welcome')}</span>
           </div>
           <div className="flex items-center gap-4">
             <Button
@@ -48,7 +56,7 @@ const Header = () => {
               className="flex items-center gap-2"
             >
               <Globe className="w-4 h-4" />
-              {language === 'en' ? 'العربية' : 'English'}
+              {language === 'en' ? t('language.arabic') : t('language.english')}
             </Button>
             <Button
               variant="ghost"
@@ -79,13 +87,13 @@ const Header = () => {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
               <Input
-                placeholder="Search for anything..."
+                placeholder={t('header.searchPlaceholder')}
                 className="pl-10 pr-4 py-3 text-lg rounded-full border-2 border-primary/20 focus:border-primary"
               />
               <Button 
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full px-6 bg-primary hover:bg-primary/90"
               >
-                Search
+                {t('header.search')}
               </Button>
             </div>
           </div>
@@ -109,10 +117,10 @@ const Header = () => {
             <div className="flex items-center gap-2">
               <Button variant="outline" className="flex items-center gap-2">
                 <User className="w-4 h-4" />
-                Sign In
+                {t('header.signIn')}
               </Button>
               <Button className="bg-primary hover:bg-primary/90">
-                Sign Up
+                {t('header.signUp')}
               </Button>
             </div>
           </div>

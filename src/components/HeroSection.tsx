@@ -1,8 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Search, Plus } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
@@ -15,12 +17,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="text-center text-white max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Find Everything
-            <span className="block text-accent">You Need</span>
+            {t('hero.titleMain')}
+            <span className="block text-accent">{t('hero.titleAccent')}</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-white/90 animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Your trusted marketplace connecting buyers and sellers across all categories
+            {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{animationDelay: '0.4s'}}>
@@ -29,7 +31,7 @@ const HeroSection = () => {
               className="bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 text-lg rounded-full"
             >
               <Search className="w-5 h-5 mr-2" />
-              Start Shopping
+              {t('hero.startShopping')}
             </Button>
             <Button 
               size="lg" 
@@ -37,7 +39,7 @@ const HeroSection = () => {
               className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg rounded-full"
             >
               <Plus className="w-5 h-5 mr-2" />
-              Sell Your Item
+              {t('hero.sellItem')}
             </Button>
           </div>
 
@@ -45,15 +47,15 @@ const HeroSection = () => {
           <div className="grid grid-cols-3 gap-8 mt-16 animate-fade-in" style={{animationDelay: '0.6s'}}>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent">10K+</div>
-              <div className="text-white/80">Active Listings</div>
+              <div className="text-white/80">{t('hero.stats.activeListings')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent">5K+</div>
-              <div className="text-white/80">Happy Users</div>
+              <div className="text-white/80">{t('hero.stats.happyUsers')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent">25+</div>
-              <div className="text-white/80">Categories</div>
+              <div className="text-white/80">{t('hero.stats.categories')}</div>
             </div>
           </div>
         </div>

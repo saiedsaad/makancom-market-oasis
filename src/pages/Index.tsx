@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,6 +26,7 @@ import HeroSection from "@/components/HeroSection";
 import SearchFilters from "@/components/SearchFilters";
 
 const Index = () => {
+  const { t } = useTranslation();
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
   const handleSearch = (query: string) => {
@@ -89,43 +91,43 @@ const Index = () => {
                 </div>
               </div>
               <p className="text-primary-foreground/80">
-                Your trusted marketplace for everything you need
+                {t('footer.trust')}
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Categories</h4>
+              <h4 className="font-semibold mb-4">{t('footer.categories')}</h4>
               <ul className="space-y-2 text-primary-foreground/80">
-                <li>Cars</li>
-                <li>Real Estate</li>
-                <li>Electronics</li>
-                <li>Furniture</li>
+                <li>{t('categories.list.cars')}</li>
+                <li>{t('categories.list.realEstate')}</li>
+                <li>{t('categories.list.electronics')}</li>
+                <li>{t('categories.list.furniture')}</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
+              <h4 className="font-semibold mb-4">{t('footer.support')}</h4>
               <ul className="space-y-2 text-primary-foreground/80">
-                <li>Help Center</li>
-                <li>Contact Us</li>
-                <li>Terms of Service</li>
-                <li>Privacy Policy</li>
+                <li>{t('footer.helpCenter')}</li>
+                <li>{t('footer.contactUs')}</li>
+                <li>{t('footer.terms')}</li>
+                <li>{t('footer.privacy')}</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
+              <h4 className="font-semibold mb-4">{t('footer.connect')}</h4>
               <ul className="space-y-2 text-primary-foreground/80">
-                <li>About Us</li>
-                <li>Blog</li>
-                <li>Careers</li>
-                <li>Press</li>
+                <li>{t('footer.aboutUs')}</li>
+                <li>{t('footer.blog')}</li>
+                <li>{t('footer.careers')}</li>
+                <li>{t('footer.press')}</li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60">
-            <p>&copy; 2024 Makancom. All rights reserved.</p>
+            <p>&copy; 2024 Makancom. {t('footer.rights')}</p>
           </div>
         </div>
       </footer>
