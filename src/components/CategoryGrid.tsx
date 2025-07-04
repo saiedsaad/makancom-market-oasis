@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { 
   Car,
   Building,
@@ -56,13 +57,19 @@ const CategoryGrid = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {featuredCategories.map((category, index) => (
-            <Card key={category.name} className="category-card group" style={{animationDelay: `${index * 0.1}s`}}>
-              <CardContent className="p-6 text-center">
-                <category.icon className="category-icon mx-auto group-hover:text-primary transition-colors" />
-                <h3 className="font-semibold text-lg mb-2">{t(`categories.list.${category.key}`)}</h3>
-                <p className="text-muted-foreground">{category.count} {t('categories.items')}</p>
-              </CardContent>
-            </Card>
+            <Link
+              to={`/categories/${category.key}`}
+              key={category.key}
+              className="group"
+            >
+              <Card className="category-card" style={{ animationDelay: `${index * 0.1}s` }}>
+                <CardContent className="p-6 text-center">
+                  <category.icon className="category-icon mx-auto group-hover:text-primary transition-colors" />
+                  <h3 className="font-semibold text-lg mb-2">{t(`categories.list.${category.key}`)}</h3>
+                  <p className="text-muted-foreground">{category.count} {t('categories.items')}</p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
@@ -73,14 +80,20 @@ const CategoryGrid = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {otherCategories.map((category, index) => (
-            <Card key={category.key} className="category-card text-center p-4 hover:border-primary/50">
-              <CardContent className="p-2">
-                <category.icon className="w-8 h-8 text-accent mx-auto mb-2" />
-                <h4 className="font-medium text-sm mb-1">{t(`categories.list.${category.key}`)}</h4>
-                <p className="text-xs text-muted-foreground">{category.count}</p>
-              </CardContent>
-            </Card>
+          {otherCategories.map(category => (
+            <Link
+              to={`/categories/${category.key}`}
+              key={category.key}
+              className="group"
+            >
+              <Card className="category-card text-center p-4 hover:border-primary/50">
+                <CardContent className="p-2">
+                  <category.icon className="w-8 h-8 text-accent mx-auto mb-2 group-hover:text-primary transition-colors" />
+                  <h4 className="font-medium text-sm mb-1">{t(`categories.list.${category.key}`)}</h4>
+                  <p className="text-xs text-muted-foreground">{category.count}</p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
