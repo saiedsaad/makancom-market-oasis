@@ -1,0 +1,101 @@
+{
+  "language": {
+    "arabic": "العربية",
+    "english": "English"
+  },
+  "header": {
+    "welcome": "Welcome to Makancom",
+    "searchPlaceholder": "Search for anything...",
+    "search": "Search",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "hero": {
+    "titleMain": "Find Everything",
+    "titleAccent": "You Need",
+    "subtitle": "Your trusted marketplace connecting buyers and sellers across all categories",
+    "startShopping": "Start Shopping",
+    "sellItem": "Sell Your Item",
+    "stats": {
+      "activeListings": "Active Listings",
+      "happyUsers": "Happy Users",
+      "categories": "Categories"
+    }
+  },
+  "categories": {
+    "popular": "Popular Categories",
+    "popularSubtitle": "Discover what's trending in our marketplace",
+    "all": "All Categories",
+    "allSubtitle": "Browse through our complete collection",
+    "list": {
+      "cars": "Cars",
+      "realEstate": "Real Estate",
+      "phones": "Phones",
+      "furniture": "Furniture",
+      "motorcycles": "Motorcycles",
+      "carRentals": "Car Rentals",
+      "marineEquipment": "Marine Equipment",
+      "spareParts": "Spare Parts",
+      "heavyEquipment": "Heavy Equipment",
+      "events": "Events & Occasions",
+      "gardening": "Gardening & Agriculture",
+      "business": "Business Services",
+      "menSupplies": "Men's Supplies",
+      "womenSupplies": "Women's Supplies",
+      "kidsSupplies": "Kids' Supplies",
+      "flowers": "Flowers & Gifts",
+      "jobs": "Job Vacancies",
+      "electronics": "Electronics",
+      "homeAppliances": "Home Appliances",
+      "cameras": "Cameras & Video"
+    },
+    "items": "items"
+  },
+  "featured": {
+    "title": "Featured Listings",
+    "subtitle": "Premium products handpicked for you",
+    "featuredBadge": "Featured",
+    "viewDetails": "View Details",
+    "viewAll": "View All Listings"
+  },
+  "search": {
+    "filters": "Filters",
+    "activeFilters": "Active filters:",
+    "clearAll": "Clear All",
+    "category": "Category",
+    "location": "Location",
+    "selectCategory": "Select category",
+    "selectLocation": "Select location",
+    "minPrice": "Min Price (AED)",
+    "maxPrice": "Max Price (AED)"
+  },
+  "product": {
+    "views": "views",
+    "likes": "likes",
+    "posted": "Posted 2 days ago",
+    "description": "Description",
+    "sellerInfo": "Seller Information",
+    "callSeller": "Call Seller",
+    "message": "Message",
+    "memberSince": "Member since 2020"
+  },
+  "footer": {
+    "categories": "Categories",
+    "support": "Support",
+    "connect": "Connect",
+    "helpCenter": "Help Center",
+    "contactUs": "Contact Us",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "aboutUs": "About Us",
+    "blog": "Blog",
+    "careers": "Careers",
+    "press": "Press",
+    "rights": "All rights reserved.",
+    "trust": "Your trusted marketplace for everything you need"
+  },
+  "notFound": {
+    "oops": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  }
+}

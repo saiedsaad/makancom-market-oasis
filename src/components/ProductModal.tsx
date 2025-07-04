@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -26,6 +27,7 @@ interface ProductModalProps {
 }
 
 const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
+  const { t } = useTranslation();
   const [isFavorited, setIsFavorited] = useState(false);
 
   if (!product) return null;
@@ -63,20 +65,20 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Eye className="w-4 h-4" />
-                {product.views} views
+                {product.views} {t('product.views')}
               </div>
               <div className="flex items-center gap-1">
                 <Heart className="w-4 h-4" />
-                {product.likes} likes
+                {product.likes} {t('product.likes')}
               </div>
               <div className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />
-                Posted 2 days ago
+                {t('product.posted')}
               </div>
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-semibold">Description</h3>
+              <h3 className="font-semibold">{t('product.description')}</h3>
               <p className="text-muted-foreground">
                 This is a premium quality item in excellent condition. Perfect for those looking for reliability and style. 
                 Contact the seller for more details and to arrange a viewing.
@@ -84,9 +86,9 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-semibold">Seller Information</h3>
+              <h3 className="font-semibold">{t('product.sellerInfo')}</h3>
               <p className="text-muted-foreground">Ahmed Al-Rashid</p>
-              <p className="text-sm text-muted-foreground">Member since 2020</p>
+              <p className="text-sm text-muted-foreground">{t('product.memberSince')}</p>
             </div>
 
             <div className="flex gap-3">
@@ -103,11 +105,11 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
               </Button>
               <Button className="flex-1 bg-primary hover:bg-primary/90">
                 <Phone className="w-4 h-4 mr-2" />
-                Call Seller
+                {t('product.callSeller')}
               </Button>
               <Button variant="outline" className="flex-1">
                 <Mail className="w-4 h-4 mr-2" />
-                Message
+                {t('product.message')}
               </Button>
             </div>
           </div>
