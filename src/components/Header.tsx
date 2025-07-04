@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import GoldStars from "./GoldStars";
 import { 
   Search, 
   User, 
@@ -74,11 +75,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <h1 className="text-3xl font-bold text-primary">Makancom</h1>
-              <div className="flex gap-1">
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-              </div>
+              <GoldStars size={16} />
             </div>
           </div>
 
