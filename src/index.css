@@ -54,8 +54,9 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 173 71% 7%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Lighten primary in dark mode for better contrast */
+    --primary: 173 71% 35%;
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -71,7 +72,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 173 71% 7%;
+    --ring: 173 71% 35%;
 
     --makancom-green: 173 71% 7%;
     --makancom-gold: 45 100% 51%;
