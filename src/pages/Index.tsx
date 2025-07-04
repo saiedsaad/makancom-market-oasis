@@ -12,8 +12,8 @@ import {
   Car,
   Building,
   Phone,
-  Furniture,
-  Motorcycle,
+  Sofa,
+  Bike,
   Camera,
   Gift,
   Plus
