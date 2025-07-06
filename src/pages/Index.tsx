@@ -48,7 +48,7 @@ const Index = () => {
   };
 
   const handlePriceFilter = (minPrice: string, maxPrice: string) => {
-    const priceFilter = `Price: ${minPrice || '0'} - ${maxPrice || '∞'} AED`;
+    const priceFilter = `Price: ${minPrice || '0'} - ${maxPrice || '∞'} SYP`;
     setActiveFilters(prev => [...prev.filter(f => !f.startsWith("Price:")), priceFilter]);
   };
 

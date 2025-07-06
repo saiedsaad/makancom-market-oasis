@@ -66,8 +66,8 @@
     "location": "Location",
     "selectCategory": "Select category",
     "selectLocation": "Select location",
-    "minPrice": "Min Price (AED)",
-    "maxPrice": "Max Price (AED)"
+    "minPrice": "Min Price (SYP)",
+    "maxPrice": "Max Price (SYP)"
   },
   "product": {
     "views": "views",
