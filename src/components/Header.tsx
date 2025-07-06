@@ -8,6 +8,9 @@ import GoldStars from "./GoldStars";
 import SignInModal from "./SignInModal";
 import { useNavigate } from "react-router-dom";
 import NotificationsModal from "./NotificationsModal";
+import { useAuth } from "@/context/AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase";
 import { 
   Search, 
   User, 
@@ -30,6 +33,7 @@ const Header = () => {
   const [isSignInOpen, setSignInOpen] = useState(false);
   const navigate = useNavigate();
   const [isNotificationsOpen, setNotificationsOpen] = useState(false);
+  const { user } = useAuth();
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -79,8 +83,8 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <h1 className="text-3xl font-bold text-primary">Makancom</h1>
-              <GoldStars size={16} />
+              <h1 className="text-3xl font-bold text-accent">Makancom</h1>
+              <GoldStars size={24} />
             </div>
           </div>
 
@@ -115,20 +119,36 @@ const Header = () => {
             </Button>
 
             <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                className="flex items-center gap-2 cursor-pointer"
-                onClick={() => setSignInOpen(true)}
-              >
-                <User className="w-4 h-4" />
-                {t('header.signIn')}
-              </Button>
-              <Button
-                className="bg-primary hover:bg-primary/90 cursor-pointer"
-                onClick={() => navigate('/login')}
-              >
-                {t('header.signUp')}
-              </Button>
+              {user ? (
+                <>
+                  <Button variant="outline" onClick={() => navigate('/account')}>
+                    <User className="w-4 h-4 mr-1" /> My Account
+                  </Button>
+                  <Button
+                    className="bg-primary hover:bg-primary/90"
+                    onClick={() => signOut(auth)}
+                  >
+                    Sign Out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    variant="outline"
+                    className="flex items-center gap-2 cursor-pointer"
+                    onClick={() => setSignInOpen(true)}
+                  >
+                    <User className="w-4 h-4" />
+                    {t('header.signIn')}
+                  </Button>
+                  <Button
+                    className="bg-primary hover:bg-primary/90 cursor-pointer"
+                    onClick={() => navigate('/login')}
+                  >
+                    {t('header.signUp')}
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
