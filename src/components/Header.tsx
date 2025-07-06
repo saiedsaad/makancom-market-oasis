@@ -7,13 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import GoldStars from "./GoldStars";
 import SignInModal from "./SignInModal";
 import { useNavigate } from "react-router-dom";
-import CartSidebar from "./CartSidebar";
 import NotificationsModal from "./NotificationsModal";
 import { 
   Search, 
   User, 
-  Bell, 
-  ShoppingCart,
+  Bell,
   Sun,
   Moon,
   Globe
@@ -31,7 +29,6 @@ const Header = () => {
   const [language, setLanguage] = useState(i18n.language || 'en');
   const [isSignInOpen, setSignInOpen] = useState(false);
   const navigate = useNavigate();
-  const [isCartOpen, setCartOpen] = useState(false);
   const [isNotificationsOpen, setNotificationsOpen] = useState(false);
 
   useEffect(() => {
@@ -117,18 +114,6 @@ const Header = () => {
               </Badge>
             </Button>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="relative cursor-pointer"
-              onClick={() => setCartOpen(true)}
-            >
-              <ShoppingCart className="w-5 h-5" />
-              <Badge className="absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center p-0 bg-accent text-xs">
-                2
-              </Badge>
-            </Button>
-
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
@@ -149,7 +134,6 @@ const Header = () => {
         </div>
       </div>
       <SignInModal open={isSignInOpen} onOpenChange={setSignInOpen} />
-      <CartSidebar open={isCartOpen} onOpenChange={setCartOpen} />
       <NotificationsModal open={isNotificationsOpen} onOpenChange={setNotificationsOpen} />
     </header>
   );
