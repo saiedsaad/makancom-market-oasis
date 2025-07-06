@@ -44,11 +44,20 @@ const SearchFilters = ({
 
   const locations = [
     'All Locations',
-    'Dubai',
-    'Abu Dhabi',
-    'Sharjah',
-    'Ajman',
-    'Ras Al Khaimah'
+    'Damascus',
+    'Rif Dimashq',
+    'Aleppo',
+    'Homs',
+    'Hama',
+    'Latakia',
+    'Tartus',
+    'Daraa',
+    'As-Suwayda',
+    'Quneitra',
+    'Idlib',
+    'Al-Hasakah',
+    'Deir ez-Zor',
+    'Raqqa'
   ];
 
   const handleSearch = () => {
@@ -169,6 +178,11 @@ const SearchFilters = ({
                   </Button>
                 </div>
               </div>
+            </div>
+            <div className="mt-4 text-right">
+              <Button className="px-6" onClick={handleSearch}>
+                {t('header.search')}
+              </Button>
             </div>
           </CardContent>
         </Card>

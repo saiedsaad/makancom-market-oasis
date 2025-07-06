@@ -11,8 +11,8 @@ const featuredProducts = [
   {
     id: 1,
     title: "Luxury Villa in Dubai Marina",
-    price: "AED 2,500,000",
-    location: "Dubai Marina, UAE",
+    price: "SYP 2,500,000",
+    location: "Damascus, Syria",
     image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop",
     category: "Real Estate",
     featured: true,
@@ -22,8 +22,8 @@ const featuredProducts = [
   {
     id: 2,
     title: "BMW X5 2023 - Perfect Condition",
-    price: "AED 180,000",
-    location: "Abu Dhabi, UAE",
+    price: "SYP 180,000",
+    location: "Aleppo, Syria",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop",
     category: "Cars",
     featured: true,
@@ -33,8 +33,8 @@ const featuredProducts = [
   {
     id: 3,
     title: "iPhone 15 Pro Max - Latest Model",
-    price: "AED 4,500",
-    location: "Sharjah, UAE",
+    price: "SYP 4,500",
+    location: "Homs, Syria",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
     category: "Phones",
     featured: true,
@@ -44,8 +44,8 @@ const featuredProducts = [
   {
     id: 4,
     title: "Modern Office Furniture Set",
-    price: "AED 8,500",
-    location: "Dubai, UAE",
+    price: "SYP 8,500",
+    location: "Latakia, Syria",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
     category: "Furniture",
     featured: true,

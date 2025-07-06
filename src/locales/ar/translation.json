@@ -66,8 +66,8 @@
     "location": "الموقع",
     "selectCategory": "اختر الفئة",
     "selectLocation": "اختر الموقع",
-    "minPrice": "أقل سعر (درهم)",
-    "maxPrice": "أعلى سعر (درهم)"
+    "minPrice": "أقل سعر (ليرة)",
+    "maxPrice": "أعلى سعر (ليرة)"
   },
   "product": {
     "views": "مشاهدة",
