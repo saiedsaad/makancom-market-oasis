@@ -42,19 +42,21 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b transition-colors">
+    <header className="sticky top-0 left-0 right-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b transition-colors">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div className="flex items-center justify-between py-2 text-sm border-b border-border/50">
           <div className="flex items-center gap-4">
-            <span className="text-muted-foreground">{t('header.welcome')}</span>
+            <span className="text-muted-foreground text-outline-gold">
+              {t('header.welcome')}
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-outline-gold"
             >
               <Globe className="w-4 h-4" />
               {language === 'en' ? t('language.arabic') : t('language.english')}
@@ -63,6 +65,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
+              className="text-outline-gold"
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>
@@ -74,7 +77,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <h1 className="text-3xl font-bold text-primary">Makancom</h1>
+              <h1 className="text-3xl font-bold text-primary text-outline-gold">
+                Makancom
+              </h1>
               <GoldStars size={16} />
             </div>
           </div>
@@ -87,8 +92,8 @@ const Header = () => {
                 placeholder={t('header.searchPlaceholder')}
                 className="pl-10 pr-4 py-3 text-lg rounded-full border-2 border-primary/20 focus:border-primary"
               />
-              <Button 
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full px-6 bg-primary hover:bg-primary/90"
+              <Button
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full px-6 bg-primary hover:bg-primary/90 text-outline-gold"
               >
                 {t('header.search')}
               </Button>
@@ -112,11 +117,11 @@ const Header = () => {
             </Button>
 
             <div className="flex items-center gap-2">
-              <Button variant="outline" className="flex items-center gap-2">
+              <Button variant="outline" className="flex items-center gap-2 text-outline-gold">
                 <User className="w-4 h-4" />
                 {t('header.signIn')}
               </Button>
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-primary hover:bg-primary/90 text-outline-gold">
                 {t('header.signUp')}
               </Button>
             </div>

@@ -105,4 +105,8 @@
   .category-icon {
     @apply w-12 h-12 text-accent mb-4;
   }
+
+  .text-outline-gold {
+    text-shadow: 0 0 2px #FFD700;
+  }
 }
