@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import GoldStars from "./GoldStars";
 import SignInModal from "./SignInModal";
-import SignUpModal from "./SignUpModal";
+import { useNavigate } from "react-router-dom";
 import CartSidebar from "./CartSidebar";
 import NotificationsModal from "./NotificationsModal";
 import { 
@@ -30,7 +30,7 @@ const Header = () => {
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState(i18n.language || 'en');
   const [isSignInOpen, setSignInOpen] = useState(false);
-  const [isSignUpOpen, setSignUpOpen] = useState(false);
+  const navigate = useNavigate();
   const [isCartOpen, setCartOpen] = useState(false);
   const [isNotificationsOpen, setNotificationsOpen] = useState(false);
 
@@ -138,7 +138,10 @@ const Header = () => {
                 <User className="w-4 h-4" />
                 {t('header.signIn')}
               </Button>
-              <Button className="bg-primary hover:bg-primary/90 cursor-pointer" onClick={() => setSignUpOpen(true)}>
+              <Button
+                className="bg-primary hover:bg-primary/90 cursor-pointer"
+                onClick={() => navigate('/login')}
+              >
                 {t('header.signUp')}
               </Button>
             </div>
@@ -146,7 +149,6 @@ const Header = () => {
         </div>
       </div>
       <SignInModal open={isSignInOpen} onOpenChange={setSignInOpen} />
-      <SignUpModal open={isSignUpOpen} onOpenChange={setSignUpOpen} />
       <CartSidebar open={isCartOpen} onOpenChange={setCartOpen} />
       <NotificationsModal open={isNotificationsOpen} onOpenChange={setNotificationsOpen} />
     </header>
