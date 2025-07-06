@@ -24,6 +24,7 @@ import CategoryGrid from "@/components/CategoryGrid";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import HeroSection from "@/components/HeroSection";
 import SearchFilters from "@/components/SearchFilters";
+import GoldStars from "@/components/GoldStars";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -82,13 +83,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex flex-col items-center mb-4 gap-1">
                 <h3 className="text-2xl font-bold">Makancom</h3>
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
-                </div>
+                <GoldStars size={16} />
               </div>
               <p className="text-primary-foreground/80">
                 {t('footer.trust')}
