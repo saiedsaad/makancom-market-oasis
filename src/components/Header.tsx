@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import GoldStars from "./GoldStars";
+import SignInModal from "./SignInModal";
+import SignUpModal from "./SignUpModal";
+import CartSidebar from "./CartSidebar";
+import NotificationsModal from "./NotificationsModal";
 import { 
   Search, 
   User, 
@@ -25,6 +29,10 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState(i18n.language || 'en');
+  const [isSignInOpen, setSignInOpen] = useState(false);
+  const [isSignUpOpen, setSignUpOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
+  const [isNotificationsOpen, setNotificationsOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -97,14 +105,24 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative cursor-pointer"
+              onClick={() => setNotificationsOpen(true)}
+            >
               <Bell className="w-5 h-5" />
               <Badge className="absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center p-0 bg-destructive text-xs">
                 3
               </Badge>
             </Button>
-            
-            <Button variant="ghost" size="icon" className="relative">
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative cursor-pointer"
+              onClick={() => setCartOpen(true)}
+            >
               <ShoppingCart className="w-5 h-5" />
               <Badge className="absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center p-0 bg-accent text-xs">
                 2
@@ -112,17 +130,25 @@ const Header = () => {
             </Button>
 
             <div className="flex items-center gap-2">
-              <Button variant="outline" className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 cursor-pointer"
+                onClick={() => setSignInOpen(true)}
+              >
                 <User className="w-4 h-4" />
                 {t('header.signIn')}
               </Button>
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-primary hover:bg-primary/90 cursor-pointer" onClick={() => setSignUpOpen(true)}>
                 {t('header.signUp')}
               </Button>
             </div>
           </div>
         </div>
       </div>
+      <SignInModal open={isSignInOpen} onOpenChange={setSignInOpen} />
+      <SignUpModal open={isSignUpOpen} onOpenChange={setSignUpOpen} />
+      <CartSidebar open={isCartOpen} onOpenChange={setCartOpen} />
+      <NotificationsModal open={isNotificationsOpen} onOpenChange={setNotificationsOpen} />
     </header>
   );
 };
