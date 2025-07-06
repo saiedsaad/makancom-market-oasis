@@ -45,17 +45,18 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Deep green background for dark mode */
+    --background: 173 71% 12%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 173 71% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 173 71% 12%;
     --popover-foreground: 210 40% 98%;
 
-    /* Lighten primary in dark mode for better contrast */
-    --primary: 173 71% 35%;
+    /* Use the same deep green for primary elements */
+    --primary: 173 71% 12%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -72,9 +73,9 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 173 71% 35%;
+    --ring: 173 71% 12%;
 
-    --makancom-green: 173 71% 7%;
+    --makancom-green: 173 71% 12%;
     --makancom-gold: 45 100% 51%;
     --makancom-silver: 210 14% 60%;
     --makancom-dark-green: 173 71% 2%;
