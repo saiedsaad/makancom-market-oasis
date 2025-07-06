@@ -94,6 +94,17 @@
     "rights": "All rights reserved.",
     "trust": "Your trusted marketplace for everything you need"
   },
+  "auth": {
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "signUpSuccess": "Account created successfully!",
+    "signUpError": "Sign up failed.",
+    "signInSuccess": "Logged in successfully!",
+    "signInError": "Login failed.",
+    "createAccount": "Create a new account",
+    "signInPrompt": "Log in to your account",
+    "logout": "Logout"
+  },
   "notFound": {
     "oops": "Oops! Page not found",
     "returnHome": "Return to Home"
