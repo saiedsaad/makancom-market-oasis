@@ -79,10 +79,10 @@ const SearchFilters = ({
         >
           {t('header.search')}
         </Button>
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           onClick={() => setShowFilters(!showFilters)}
-          className="rounded-full px-6"
+          className="rounded-full px-6 text-primary dark:text-primary-foreground"
         >
           <Filter className="w-4 h-4 mr-2" />
           {t('search.filters')}
