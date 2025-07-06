@@ -55,7 +55,9 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
           {/* Details */}
           <div className="space-y-4">
             <div>
-              <p className="text-3xl font-bold text-primary mb-2">{product.price}</p>
+              <p className="text-3xl font-bold text-accent mb-2">
+                {`SYP ${product.price.toLocaleString()}`}
+              </p>
               <div className="flex items-center gap-2 text-muted-foreground mb-4">
                 <MapPin className="w-4 h-4" />
                 {product.location}

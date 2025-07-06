@@ -6,53 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, Share2, Eye } from "lucide-react";
 import ProductModal from "./ProductModal";
+import { products } from "@/lib/products";
 
-const featuredProducts = [
-  {
-    id: 1,
-    title: "Luxury Villa in Dubai Marina",
-    price: "SYP 2,500,000",
-    location: "Damascus, Syria",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop",
-    category: "Real Estate",
-    featured: true,
-    views: 245,
-    likes: 12
-  },
-  {
-    id: 2,
-    title: "BMW X5 2023 - Perfect Condition",
-    price: "SYP 180,000",
-    location: "Aleppo, Syria",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop",
-    category: "Cars",
-    featured: true,
-    views: 189,
-    likes: 8
-  },
-  {
-    id: 3,
-    title: "iPhone 15 Pro Max - Latest Model",
-    price: "SYP 4,500",
-    location: "Homs, Syria",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
-    category: "Phones",
-    featured: true,
-    views: 156,
-    likes: 15
-  },
-  {
-    id: 4,
-    title: "Modern Office Furniture Set",
-    price: "SYP 8,500",
-    location: "Latakia, Syria",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
-    category: "Furniture",
-    featured: true,
-    views: 98,
-    likes: 6
-  }
-];
+const featuredProducts = products.filter(p => p.featured);
 
 const FeaturedProducts = () => {
   const { t } = useTranslation();
@@ -107,19 +63,21 @@ const FeaturedProducts = () => {
                 </div>
                 {product.featured && (
                   <div className="absolute bottom-3 left-3">
-                    <Badge className="bg-primary text-primary-foreground">{t('featured.featuredBadge')}</Badge>
+                    <Badge className="bg-accent text-black">{t('featured.featuredBadge')}</Badge>
                   </div>
                 )}
               </div>
               
               <CardContent className="p-4">
-                <h3 
-                  className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors cursor-pointer"
+                <h3
+                  className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-accent transition-colors cursor-pointer"
                   onClick={() => setSelectedProduct(product)}
                 >
                   {product.title}
                 </h3>
-                <p className="text-2xl font-bold text-primary mb-2">{product.price}</p>
+                <p className="text-2xl font-bold text-accent mb-2">
+                  {`SYP ${product.price.toLocaleString()}`}
+                </p>
                 <p className="text-muted-foreground text-sm mb-3">{product.location}</p>
                 
                 <div className="flex items-center justify-between text-sm text-muted-foreground">
